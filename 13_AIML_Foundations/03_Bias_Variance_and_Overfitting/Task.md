@@ -1,18 +1,13 @@
-# Task: Bias and Variance
+# Task: Taming Overfitting
 
-## Task 1: The Validation Curve
-In the implementation notebook, we looked at Training MSE.
-1.  Copy the code.
-2.  Generate a **separate** Test Set (`X_test_new`, `y_test_new`) of 20 points.
-3.  Loop through degrees from 1 to 15.
-4.  For each degree:
-    *   Train on the Training Set.
-    *   Calculate MSE on Train Set.
-    *   Calculate MSE on Test Set.
-5.  Plot `Train MSE` and `Test MSE` vs `Degree` on the same graph.
-6.  Identify the degree where Test MSE is lowest. This is the sweet spot.
+## Objective
+Fix an overfitted model using Regularization.
 
-## Task 2: Regularization
-1.  Use `sklearn.linear_model.Ridge` instead of `LinearRegression`.
-2.  Train a Degree 15 polynomial (which was overfitting) but with `Ridge(alpha=1.0)`.
-3.  Plot the result. Does the line wiggle less?
+## Data
+We have a very small, noisy dataset of 10 points generated from a cubic function ($y=x^3$).
+
+## Tasks
+1.  **Overfit**: Fit a **Degree 10** Polynomial Regression. Plot it. Observe the wild oscillations.
+2.  **Regularize**: Fit a **Ridge Regression** (L2 Regularization) with the same Degree 10 features.
+    *   Use `sklearn.linear_model.Ridge(alpha=1.0)`.
+    *   Plot the new curve. Notice how it is much smoother, effectively "ignoring" the high-degree freedom to prevent overfitting.
